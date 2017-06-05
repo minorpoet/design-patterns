@@ -15,7 +15,7 @@ public class SoldierFactory {
 
        public static Soldier getSoldier(){
            if(SOLDIER == null){
-               synchronized(SSoldierFactory.class){
+               synchronized(SoldierFactory.class){
                    if(SOLDIER == null){
                         SOLDIER = new SoldierImp();
                }
