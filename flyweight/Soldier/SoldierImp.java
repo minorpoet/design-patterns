@@ -1,7 +1,5 @@
-package flyweight;
-
-import flyweight.Soldier;
-
+package flyweight.soldier;
+ 
 /**
  * SoldierImp
  */

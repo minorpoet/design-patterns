@@ -1,4 +1,4 @@
-package flyweight;
+package flyweight.soldier;
 
 import flyweight.Soldier;
 import flyweight.SoldierFactory;

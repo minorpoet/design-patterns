@@ -1,4 +1,4 @@
-package flyweight;
+package flyweight.soldier;
 
 /**
  * Driver: War Game
