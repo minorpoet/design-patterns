@@ -1,5 +1,7 @@
 package flyweight.character;
 
+import com.sun.scenario.effect.impl.state.LinearConvolveKernel;
+
 /**
  * 字符对象，内部使用共享的字符享元
  */
@@ -8,7 +10,7 @@ public class Character {
 
     private int column = 0;
 
-    private CharacterFlyweight flyweight;
+    private ICharacterFlyweight flyweight;
 
     public Character(String letter, int line, int column) {
         flyweight = CharacterFlyweightFactory.getInstance().getCharacter(letter);
@@ -40,6 +42,6 @@ public class Character {
 
     @Override
     public String toString() {
-        return flyweight.toString() + " at " + "(" + line + "," + column + ")";
+        return String.format("%s at (%d,%d)", flyweight.render(), line, column);
     }
 }

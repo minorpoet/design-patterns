@@ -1,5 +1,5 @@
 package flyweight.character;
 
-public interface ICharacterFlyweight{
+public interface ICharacterFlyweight {
     String render();
 }

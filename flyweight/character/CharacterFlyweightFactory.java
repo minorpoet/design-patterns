@@ -9,25 +9,15 @@ import java.util.concurrent.ConcurrentHashMap;
 public class CharacterFlyweightFactory {
     private static final CharacterFlyweightFactory INSTANCE = new CharacterFlyweightFactory();
 
-    private Map<String, CharacterFlyweight> cache = new ConcurrentHashMap();
+    private Map<String, ICharacterFlyweight> cache = new ConcurrentHashMap();
 
     private CharacterFlyweightFactory() {
-        CharacterFlyweight A = new CharacterFlyweight();
-        A.setLetter('A');
-        A.setFontFace("微软雅黑");
-        A.setFontSize("12");
+        ConcreteCharacterFlyweight A = new ConcreteCharacterFlyweight('A', "微软雅黑", "12");
+        ConcreteCharacterFlyweight B = new ConcreteCharacterFlyweight('B', "幼圆", "13");
+        ConcreteCharacterFlyweight C = new ConcreteCharacterFlyweight('C', "宋体", "14");
+
         cache.put("A", A);
-
-        CharacterFlyweight B = new CharacterFlyweight();
-        B.setLetter('B');
-        B.setFontFace("微软雅黑");
-        B.setFontSize("13");
         cache.put("B", B);
-
-        CharacterFlyweight C = new CharacterFlyweight();
-        C.setLetter('C');
-        C.setFontFace("微软雅黑");
-        C.setFontSize("14");
         cache.put("C", C);
 
         // other letters ...
@@ -37,8 +27,8 @@ public class CharacterFlyweightFactory {
         return INSTANCE;
     }
 
-    public CharacterFlyweight getCharacter(String letter){
-        if(cache.containsKey(letter)){
+    public ICharacterFlyweight getCharacter(String letter) {
+        if (cache.containsKey(letter)) {
             return cache.get(letter);
         }
         return null;
