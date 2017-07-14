@@ -24,7 +24,8 @@ public class Editor {
             for (int j = 0; j < 120; j++) {
                 characters.add(new Character(letters[random.nextInt(3)], i, j));
             }
-        }        for(Character character : characters){
+        }       
+        for(Character character : characters){
             System.out.println(character);
         }
     }
