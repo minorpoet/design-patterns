@@ -1,5 +1,4 @@
 # design-patterns
-demos for design-patterns
 
 - Structural Patterns
   - [flyweight](https://github.com/minorpoet/design-patterns/tree/master/flyweight)
